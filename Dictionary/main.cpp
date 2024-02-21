@@ -1,48 +1,57 @@
-#include "lib.h"
-static map<string, int> dictionary;
-static vector<string> newWords;
+п»ї#include "lib.h"
 
-vector<string> getFiles(const string& path) {
-    vector<string> files;
-    for (const auto& entry : filesystem::directory_iterator(path)) {
-        files.push_back(entry.path().string());
-    }
-    return files;
+map<string, int> colorCodes = {
+  {"Dark red", 31},
+  {"Dark green", 32},
+  {"Dark yellow", 33},
+  {"Dark blue", 34},
+  {"Dark magenta", 35},
+  {"Dark cyan", 36},
+  {"Dark white", 37},
+  {"Light red", 90},
+  {"Light green", 92},
+  {"Light yellow", 93},
+  {"Light blue", 94},
+  {"Light magenta", 95},
+  {"Light cyan", 96},
+  {"Light white", 97},
+};
+
+// РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ С†РІРµС‚ С‚РµРєСЃС‚Р°.
+void setColorss(string color) {
+    if (colorCodes.find(color) != colorCodes.end())
+        cout << "\x1b[30m";
+    cout << "\x1b[" << colorCodes[color] << "m";
 }
 
+// Р”РµР»Р°РµС‚ С‚РµРєСЃС‚ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ.
+void resetColorss() {
+    cout << "\x1b[0m";
+}
 
 int main() {
-    dictionary = loadDictionary("dictionary.txt");
-    // Открытие текстового файла
+    DictionaryWork work("Text", "check.txt");
 
-    vector<string> files = getFiles("\Text");
-
-    
-    // Счетчики для новых и существующих слов
-    int newWordsCount = 0;
-    int existingWordsCount = 0;
+    cout << "Added new words: " << work.newWordsCount << endl;
+    cout << "We found this words: " << work.existingWordsCount << endl;
 
 
-
-    for (auto& name : files)
-    {
-        workWithWords(name, newWordsCount, existingWordsCount, dictionary, newWords);
-
-    }
-
-    
-
-
-
-    cout << "Added new words: " << newWordsCount << endl;
-    cout << "We found this words: " << existingWordsCount << endl;
-    
-    // Вывод списка новых слов
     cout << "New words:" << endl;
-    for (string word : newWords) {
+    for (string word : work.newWords) {
         cout << word << "   ";
     }
-    saveDictionary("dictionary.txt", dictionary, files);
+
+
+    cout << "_____________________________________" << endl;
+    cout << "_____________________________________" << endl;
+    cout << "_____________________________________" << endl;
+    setColorss("Dark red");
+    for (const auto& word : work.missingWords) {
+
+        cout << word << '\t';
+    }
+    resetColorss();
+    cout << endl << "Number of words with error " << work.Errors << endl;
 
     return 0;
 }
