@@ -1,18 +1,10 @@
-﻿#pragma once
-#include <iostream>
-#include <fstream>
-#include <map>
-#include <string>
-#include <algorithm>
-#include <vector>
-#include <filesystem> // для поиска в директории 
-
-using namespace std;
+#pragma once
+#include "lib.h"
 
 
-struct DictionaryWork {
+class DictionaryWork {
 public:
-	vector<string> FILENAMES;
+	const vector<string> FILENAMES;
 	map<string, int> dictionary;
 	vector<string> newWords;
 	vector<string> files;
@@ -28,12 +20,10 @@ private:
 	void saveDictionary(string filename);
 	void loadDictionary(string filename);
 	void workWithWords(string& filename);
-
 	vector<string> getFiles(const string& path);
+
 public:
 	DictionaryWork(string path, string checkFile);
 };
-
-
 
 

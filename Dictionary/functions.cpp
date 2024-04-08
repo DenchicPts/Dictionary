@@ -1,4 +1,4 @@
-﻿#include "lib.h"
+﻿#include "functions.h"
 
 
 
@@ -27,7 +27,8 @@ string DictionaryWork::cleanText(string str) {
 
 // Конструктор, который загружает словарь, обрабатывает файлы в указанной директории,
 // выполняет поиск в заданном файле и сохраняет обновленный словарь.
-DictionaryWork::DictionaryWork(string path, string checkFile) {
+DictionaryWork::DictionaryWork(string path, string checkFile) : FILENAMES(get_checkedFiles()){
+
 
     this->loadDictionary("dictionary.txt");
 
@@ -50,16 +51,14 @@ void DictionaryWork::saveDictionary(string filename) {
         cout << "failed!" << endl;
         return;
     }
-    outfile << files.size() << endl;
+
     for (auto& n : files)
-    {
-        outfile << n << endl;
-    }
+        set_checkedFiles(n);
+    
 
 
     for (auto it : this->dictionary)
         outfile << it.first << " " << it.second << endl;
-
 
     outfile.close();
 }
@@ -72,20 +71,6 @@ void DictionaryWork::loadDictionary(string filename) {
 
     string word;
     int count;
-
-    if (!getline(infile, word))
-        return;
-
-
-
- 
-    int i = stoi(word);
-    // Читаем имена файлов из следующих строк и добавляем их в список FILENAMES
-    for (; i > 0; i--) {
-        getline(infile, word);
-        this->FILENAMES.push_back(word);
-    }
-
 
     while (infile >> word >> count)
         this->dictionary[word] = count;
@@ -103,20 +88,18 @@ void DictionaryWork::workWithWords(string& filename) {
         cout << "failed!" << endl;
         return;
     }
+    // Проверяет был ли уже обработан этот файл
+    for (auto& comp : FILENAMES)
+    {
+        if (comp == filename) {
+			infile.close();
+            return;
+        }
+    }
+
 
     string word;
     while (infile >> word) {
-        bool next = false;
-        // Проверяем является ли текущий файл одним из файлов обработанных ранее
-        for (auto& i : FILENAMES)
-            if (i == filename) {
-                next = true;
-                break;
-            }
-
-        if (next)
-            break;
-
 
         word = cleanText(word);
         word = toLower(word);

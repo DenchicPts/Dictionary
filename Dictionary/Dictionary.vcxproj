@@ -70,6 +70,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin</OutDir>
+    <IntDir>$(SolutionDir)bin\intermidiates</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -106,6 +110,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>C:\Users\denpr\source\repos\Dictionary\Dictionary\dependencies\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -130,13 +135,25 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="functions.cpp" />
+    <ClCompile Include="jsonWork.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="dictionary.txt" />
+    <ClInclude Include="dependencies\include\functions.h" />
+    <ClInclude Include="dependencies\include\jsonWork.h" />
+    <ClInclude Include="dependencies\include\lib.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="lib.h" />
+    <Text Include="check.txt" />
+    <Text Include="dictionary.txt" />
+    <Text Include="Text\A-Dog-s-Tale-Mark-Twain-[ebooksread.com].txt" />
+    <Text Include="Text\Adventure-Jack-London-[ebooksread.com].txt" />
+    <Text Include="Text\Eureka--A-prose-poem-Edgar-Allan-Poe-[ebooksread.com].txt" />
+    <Text Include="Text\Stories-of-Sherlock--Sir-Arthur-Cona-[ebooksread.com].txt" />
+    <Text Include="Text\The-fixer-George-O---Geor-[ebooksread.com].txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="main_config.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
