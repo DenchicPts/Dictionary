@@ -7,33 +7,29 @@
 #include <vector>
 #include <filesystem> // для поиска в директории 
 
+
 using namespace std;
 
 
-struct DictionaryWork {
-public:
-	vector<string> FILENAMES;
-	map<string, int> dictionary;
-	vector<string> newWords;
-	vector<string> files;
-	vector<string> missingWords;
-	int newWordsCount = 0;
-	int existingWordsCount = 0;
-	int Errors = 0;
+#include "jsonWork.h"
+#include "functions.h"
 
-private:
-	string toLower(string& str);
-	string cleanText(string str);
-	void fileSearch(const string& path);
-	void saveDictionary(string filename);
-	void loadDictionary(string filename);
-	void workWithWords(string& filename);
-
-	vector<string> getFiles(const string& path);
-public:
-	DictionaryWork(string path, string checkFile);
+// почему без статика выдаёт ошибку, а с не выдаёт.
+static map<string, int> colorCodes = { 
+  {"Dark red", 31},
+  {"Dark green", 32},
+  {"Dark yellow", 33},
+  {"Dark blue", 34},
+  {"Dark magenta", 35},
+  {"Dark cyan", 36},
+  {"Dark white", 37},
+  {"Light red", 90},
+  {"Light green", 92},
+  {"Light yellow", 93},
+  {"Light blue", 94},
+  {"Light magenta", 95},
+  {"Light cyan", 96},
+  {"Light white", 97},
 };
-
-
-
-
+void setColorss(string color);
+void resetColorss();
