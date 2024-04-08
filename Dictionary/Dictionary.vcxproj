@@ -110,6 +110,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>C:\Users\denpr\source\repos\Dictionary\Dictionary\dependencies\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -138,12 +139,21 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="check.txt" />
     <Text Include="dictionary.txt" />
+    <Text Include="Text\A-Dog-s-Tale-Mark-Twain-[ebooksread.com].txt" />
+    <Text Include="Text\Adventure-Jack-London-[ebooksread.com].txt" />
+    <Text Include="Text\Eureka--A-prose-poem-Edgar-Allan-Poe-[ebooksread.com].txt" />
+    <Text Include="Text\Stories-of-Sherlock--Sir-Arthur-Cona-[ebooksread.com].txt" />
+    <Text Include="Text\The-fixer-George-O---Geor-[ebooksread.com].txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="functions.h" />
-    <ClInclude Include="jsonWork.h" />
-    <ClInclude Include="lib.h" />
+    <None Include="main_config.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dependencies\include\functions.h" />
+    <ClInclude Include="dependencies\include\jsonWork.h" />
+    <ClInclude Include="dependencies\include\lib.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

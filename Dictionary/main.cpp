@@ -1,6 +1,8 @@
 ﻿#include "lib.h"
 
 int main() {
+    jsonStartup();
+
     DictionaryWork work("Text", "check.txt");
 
     cout << "Added new words: " << work.newWordsCount << endl;
@@ -24,6 +26,16 @@ int main() {
     resetColorss();
     cout << endl << "Number of words with error " << work.Errors << endl;
 
+	vector<string> files = get_checkedFiles();
+    for (auto& i : files)
+    {
+        cout << i << endl;
+    }
+	cout << get_CountFiles() << endl;
+
+    string names = "Coca Cola";
+    set_checkedFiles(names);
+    jsonChange();
     return 0;
 }
 
