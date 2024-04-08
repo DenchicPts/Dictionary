@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Text to dictionary">
+      <UniqueIdentifier>{499047d9-c711-4dc8-9c77-d0a908e6fc9f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -26,17 +29,42 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="dictionary.txt" />
+    <ClInclude Include="dependencies\include\functions.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\jsonWork.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="dependencies\include\lib.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="lib.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="jsonWork.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="functions.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
+    <Text Include="check.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="dictionary.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="Text\A-Dog-s-Tale-Mark-Twain-[ebooksread.com].txt">
+      <Filter>Text to dictionary</Filter>
+    </Text>
+    <Text Include="Text\Adventure-Jack-London-[ebooksread.com].txt">
+      <Filter>Text to dictionary</Filter>
+    </Text>
+    <Text Include="Text\Eureka--A-prose-poem-Edgar-Allan-Poe-[ebooksread.com].txt">
+      <Filter>Text to dictionary</Filter>
+    </Text>
+    <Text Include="Text\Stories-of-Sherlock--Sir-Arthur-Cona-[ebooksread.com].txt">
+      <Filter>Text to dictionary</Filter>
+    </Text>
+    <Text Include="Text\The-fixer-George-O---Geor-[ebooksread.com].txt">
+      <Filter>Text to dictionary</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="main_config.json">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
   </ItemGroup>
 </Project>

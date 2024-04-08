@@ -1,11 +1,10 @@
 {
     "checkedFiles": [
-        "A-Dog-s-Tale-Mark-Twain-[ebooksread.com].txt",
-        "Adventure-Jack-London-[ebooksread.com].txt",
-        "Eureka--A-prose-poem-Edgar-Allan-Poe-[ebooksread.com].txt",
-        "Stories-of-Sherlock--Sir-Arthur-Cona-[ebooksread.com].txt",
-        "The-fixer-George-O---Geor-[ebooksread.com].txt"
-
+        "Text\\A-Dog-s-Tale-Mark-Twain-[ebooksread.com].txt",
+        "Text\\Adventure-Jack-London-[ebooksread.com].txt",
+        "Text\\Eureka--A-prose-poem-Edgar-Allan-Poe-[ebooksread.com].txt",
+        "Text\\Stories-of-Sherlock--Sir-Arthur-Cona-[ebooksread.com].txt",
+        "Text\\The-fixer-George-O---Geor-[ebooksread.com].txt"
     ],
     "size": 5
 }

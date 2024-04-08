@@ -33,8 +33,6 @@ int main() {
     }
 	cout << get_CountFiles() << endl;
 
-    string names = "Coca Cola";
-    set_checkedFiles(names);
     jsonChange();
     return 0;
 }

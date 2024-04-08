@@ -139,6 +139,11 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="dependencies\include\functions.h" />
+    <ClInclude Include="dependencies\include\jsonWork.h" />
+    <ClInclude Include="dependencies\include\lib.h" />
+  </ItemGroup>
+  <ItemGroup>
     <Text Include="check.txt" />
     <Text Include="dictionary.txt" />
     <Text Include="Text\A-Dog-s-Tale-Mark-Twain-[ebooksread.com].txt" />
@@ -149,11 +154,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="main_config.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="dependencies\include\functions.h" />
-    <ClInclude Include="dependencies\include\jsonWork.h" />
-    <ClInclude Include="dependencies\include\lib.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

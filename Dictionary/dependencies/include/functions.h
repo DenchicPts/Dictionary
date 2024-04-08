@@ -4,7 +4,7 @@
 
 class DictionaryWork {
 public:
-	vector<string> FILENAMES;
+	const vector<string> FILENAMES;
 	map<string, int> dictionary;
 	vector<string> newWords;
 	vector<string> files;
