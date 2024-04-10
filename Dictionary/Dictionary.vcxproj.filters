@@ -61,6 +61,9 @@
     <Text Include="Text\The-fixer-George-O---Geor-[ebooksread.com].txt">
       <Filter>Text to dictionary</Filter>
     </Text>
+    <Text Include="check_fixed.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <None Include="main_config.json">
