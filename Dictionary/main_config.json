@@ -1,5 +1,5 @@
 {
-  "checkFiles": false,
+  "checkFiles": true,
   "checkedFiles": [
     "Text\\A-Dog-s-Tale-Mark-Twain-[ebooksread.com].txt",
     "Text\\Adventure-Jack-London-[ebooksread.com].txt",
@@ -7,6 +7,6 @@
     "Text\\Stories-of-Sherlock--Sir-Arthur-Cona-[ebooksread.com].txt",
     "Text\\The-fixer-George-O---Geor-[ebooksread.com].txt"
   ],
-  "problemWords": false,
+  "problemWords": true,
   "size": 5
 }
